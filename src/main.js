@@ -4,6 +4,7 @@ import './styles.css';
 import $ from 'jquery';
 import { medApi } from './api.js';
 
+
 $(document).ready(function() {
   $('#button').click(function(event) {
     event.preventDefault();
