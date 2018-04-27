@@ -6,6 +6,5 @@ class Doctor {
     this.street = street;
     this.zip = zip;
     }
-
   }
     export { Doctor };
