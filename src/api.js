@@ -1,7 +1,7 @@
 class medApi {
   apiCall() {
     return new Promise(function(resolve, reject) {
-      let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&user_key=b9cb7d0f19a88f5b697c88a77292e15c';
+      let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&user_key=${process.env.apiKey}`; 
       let request = new XMLHttpRequest();
 
       request.onload = function() {
