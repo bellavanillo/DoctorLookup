@@ -12,7 +12,16 @@ $(document).ready(function() {
 
     promise.then(function(response) {
       let body = JSON.parse(response);
-      $('.results').append(`${body.data[4].name}`);
+      let bodyArray =body.data;
+      let name = body.data[0].practices[0].name;
+      let newPatient = body.data[0].practices[0].accepts_new_patients;
+      let number = body.data[0].practices[0].phones[0].number;
+      // if (bodyArray.length === 0) {
+      //   $('#noresults').text(`There are no doctors found, please try again!`)
+      // } else {
+      //
+      // }
+      $('#results').append(`${body.data[0].practices[0].name}, ${body.data[0].practices[0].accepts_new_patients}, ${body.data[0].practices[0].phones[0].number}`);
     }, function(error) {
       $('#errorText').text(`There was an error processing your request: ${error.message}`);
     });
