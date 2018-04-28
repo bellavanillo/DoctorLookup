@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
 import { medApi } from './api.js';
-import { Doctor } from './doctor.js';
 
 
 $(document).ready(function() {
@@ -20,7 +19,9 @@ $(document).ready(function() {
       let street = body.data[0].practices[0].visit_address.street;
       let zip = body.data[0].practices[0].visit_address.zip;
       let number = body.data[0].practices[0].phones[0].number;
-      $('#results').append(`Name: ${name}, Phone number: ${number}, Is accepting new patients: ${newPatient}, Address: ${street}, ${zip}. `);
+      for (let i = 0; i < bodyArray.length; i++){
+        $('#results').append(`Name: ${name}, Phone number: ${number}, Is accepting new patients: ${newPatient}, Address: ${street}, ${zip}. `);
+      }
     }, function(error) {
       $('#errorText').text(`There was an error processing your request: ${error.message}`);
     });
