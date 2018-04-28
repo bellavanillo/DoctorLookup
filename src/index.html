@@ -6,7 +6,10 @@
 <body>
   <div class="container">
     <h1>Portland, OR Doctor Finder</h1>
-    <h3>Enter a symptom to get a list of doctors in the Portland area that can help treat you!</h3>
+    <p>Enter your name and select a symptom to get a list of doctors in the Portland area that can help treat you!</p>
+    <form id="nameform">
+      <input type="text">
+    </form>
     <form id="symptoms">
       <select class="form-control" id="symptoms">
         <option value="Rash">Rash</option>
@@ -19,14 +22,22 @@
       </select>
       <button id="button" type="click" name="button">Submit</button>
     </form>
-      <div id="results">
-
+    <div class="row">
+      <div class="col col-sm" id="results1">
+      </div>
+      <div class="col col-sm" id="results2">
+      </div>
+      <div class="col col-sm" id="results3">
+      </div>
+      <div class="col col-sm" id="results4">
+      </div>
     </div>
+
     <div>
       <p id="errorText"></p>
     </div>
     <div class="noresults">
-      <p id="noresults"></p>
+      <p id="noresults">Sorry there are no doctors! Please try again.</p>
     </div>
   </div>
 </body>
